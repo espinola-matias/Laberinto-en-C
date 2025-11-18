@@ -111,6 +111,10 @@ bool resolver_tablero(int fila_actual, int columna_actual){
 
     if (salida_fila == fila_actual && salida_columna == columna_actual) {
     return true;
-    }
+    }else {
+        int direcciones[4][2] = {{-1, 0}, {1, 0}, {0, -1}, {0, 1}}; // defino direcciones en un array de array
+        for (int direccion = 0; direccion < 4; direccion++) {
+            int nueva_fila = fila_actual + direcciones[direccion][0];
+            int nueva_columna = columna_actual + direcciones[direccion][1];}
 
 }
