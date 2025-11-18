@@ -60,3 +60,16 @@ void imprimir_tablero() {
         printf("\n");
     }
 }
+
+void mezclar(int arr[4][2]) {
+    for (int i = 0; i < 4; i++) {
+        int j = rand() % 4;  // indice random y aseguramos que el valor sea valido
+        // cambiar arr[i] a arr[j]
+        int temporal0 = arr[i][0];
+        int temporal1 = arr[i][1];
+        arr[i][0] = arr[j][0];
+        arr[i][1] = arr[j][1];
+        arr[j][0] = temporal0;
+        arr[j][1] = temporal1;
+    }
+}
