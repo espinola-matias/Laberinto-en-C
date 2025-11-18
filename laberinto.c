@@ -73,3 +73,32 @@ void mezclar(int arr[4][2]) {
         arr[j][1] = temporal1;
     }
 }
+
+// recorrido a profundidad generando caminos randon con bactracking
+void generar_laberinto(int fila_actual, int columna_actual) {
+    int salida_fila = DIMENSION -1;
+    int salida_columna = DIMENSION -1;
+
+
+    laberinto_tablero[fila_actual][columna_actual] = CAMINO;
+    
+    if (salida_fila == fila_actual && salida_columna == columna_actual) {
+        return;
+    } else {
+        int direcciones[4][2] = {{-2, 0}, {2, 0}, {0, -2}, {0, 2}}; //  para generar caminos con espacios que serian los muros 
+        mezclar(direcciones); // mezcla para hacer direcciones aleatorias 
+        for (int direccion = 0; direccion < 4; direccion++) {
+            int nueva_fila = fila_actual + direcciones[direccion][0];
+            int nueva_columna = columna_actual + direcciones[direccion][1];
+            if (nueva_fila >= 0 && nueva_fila < DIMENSION && nueva_columna >= 0 && nueva_columna < DIMENSION) {
+                if (laberinto_tablero[nueva_fila][nueva_columna] == MUROS) {
+                    // limpiar muro intermedio
+                    int fila_muro = (fila_actual+nueva_fila)/2;
+                    int columna_muro = (columna_actual + nueva_columna)/2;
+                    laberinto_tablero[fila_muro][columna_muro] = CAMINO;
+                    generar_laberinto(nueva_fila, nueva_columna); // realiza la llamada recursiva para seguir generando caminos disponibles 
+                }
+            }
+        }
+    }
+}
