@@ -46,3 +46,29 @@ La dimensión del tablero es configurable mediante:
 
 ```c
 #define DIMENSION 11
+
+## 🛠️ Requerimientos
+
+Para ejecutar este proyecto necesitás:
+
+1. **Compilador de C**  
+   - GCC (Linux / Windows con MinGW)  
+   - Clang (macOS / Linux)  
+
+2. **Sistema operativo**  
+   - Compatible con Windows, Linux o macOS.
+
+3. **Terminal / Consola**  
+   - Para compilar y ejecutar el programa.
+
+## ▶️ Cómo compilar
+
+Desde la terminal / consola, ubicándote en la carpeta del proyecto:
+
+```bash
+gcc main.c -o laberinto
+
+## Ejecutarlo desde la misma terminal
+´´´´bash
+./laberinto      # Linux / macOS
+laberinto.exe    # Windows
