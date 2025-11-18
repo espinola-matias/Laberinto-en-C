@@ -108,3 +108,9 @@ bool resolver_tablero(int fila_actual, int columna_actual){
     int salida_fila = DIMENSION -1;
     int salida_columna = DIMENSION -1;
     bool resuelto = false;
+
+    if (salida_fila == fila_actual && salida_columna == columna_actual) {
+    return true;
+    }
+
+}
