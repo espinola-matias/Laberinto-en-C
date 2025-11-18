@@ -51,3 +51,12 @@ void inicializar_tablero() {
         }
     }
 }
+
+void imprimir_tablero() {
+    for (int i = 0; i < DIMENSION; i++){
+        for (int j = 0; j < DIMENSION; j++){
+            printf("%c", laberinto_tablero[i][j]);
+        }
+        printf("\n");
+    }
+}
