@@ -121,6 +121,15 @@ bool resolver_tablero(int fila_actual, int columna_actual){
                     if (visitados[nueva_fila][nueva_columna] == false){
                         visitados[nueva_fila][nueva_columna] = true;   
                         // guardo en una variable y llamamos a recursividad y chequeamos si retorna true la condicion y rompe el bucle  
-                        resuelto = resolver_tablero(nueva_fila, nueva_columna);}}}}}
-
+                        resuelto = resolver_tablero(nueva_fila, nueva_columna);
+                        if (resuelto) {
+                          laberinto_tablero[nueva_fila][nueva_columna] = SOLUCION;
+                          break;  
+                        }
+                    }
+                }
+            }
+        }
+    }
+    return resuelto;
 }
