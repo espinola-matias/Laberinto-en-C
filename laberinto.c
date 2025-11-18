@@ -115,6 +115,12 @@ bool resolver_tablero(int fila_actual, int columna_actual){
         int direcciones[4][2] = {{-1, 0}, {1, 0}, {0, -1}, {0, 1}}; // defino direcciones en un array de array
         for (int direccion = 0; direccion < 4; direccion++) {
             int nueva_fila = fila_actual + direcciones[direccion][0];
-            int nueva_columna = columna_actual + direcciones[direccion][1];}
+            int nueva_columna = columna_actual + direcciones[direccion][1];
+            if (nueva_fila >= 0 && nueva_fila < DIMENSION && nueva_columna >= 0 && nueva_columna < DIMENSION) {
+                if (laberinto_tablero[nueva_fila][nueva_columna] != MUROS) {
+                    if (visitados[nueva_fila][nueva_columna] == false){
+                        visitados[nueva_fila][nueva_columna] = true;   
+                        // guardo en una variable y llamamos a recursividad y chequeamos si retorna true la condicion y rompe el bucle  
+                        resuelto = resolver_tablero(nueva_fila, nueva_columna);}}}}}
 
 }
