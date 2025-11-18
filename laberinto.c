@@ -102,3 +102,9 @@ void generar_laberinto(int fila_actual, int columna_actual) {
         }
     }
 }
+
+// recorrido por profundidad + bactracking
+bool resolver_tablero(int fila_actual, int columna_actual){
+    int salida_fila = DIMENSION -1;
+    int salida_columna = DIMENSION -1;
+    bool resuelto = false;
