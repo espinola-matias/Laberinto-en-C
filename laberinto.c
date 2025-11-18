@@ -43,3 +43,11 @@ int main() {
     }
     return 0;
 }
+
+void inicializar_tablero() {
+    for (int i = 0; i < DIMENSION; i++) {
+        for (int j = 0; j < DIMENSION; j++){
+            laberinto_tablero[i][j] = MUROS;
+        }
+    }
+}
